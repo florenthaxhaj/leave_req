@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilanci nga Menaxheri i Personelit</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Bilanci nga Menaxheri i Personelit</h1>
+    <form method="post">
+        <input type="hidden" name="_id" value="{{ data['_id'] }}">
+        <p>Kërkesa për pushim vjetor nga: {{ data['emri'] }}</p>
+        <p>Ditët e pushimit: {{ data['dite_pushim'] }} nga data {{ data['data_fillimit'] }} deri më {{ data['data_mbarimit'] }}</p>
+        <label>Ditët e mbetura nga viti paraprak:</label>
+        <input type="number" name="ditet_mbetura_paraprak" required><br>
+        <label>Ditët e fituara nga viti aktual:</label>
+        <input type="number" name="ditet_fituara_aktual" required><br>
+        <label>Të gjitha ditët e grumbulluara deri më tani:</label>
+        <input type="number" name="ditet_grumbulluara" required><br>
+        <label>Ditët që do të shfrytëzohen:</label>
+        <input type="number" name="ditet_shfrytezohen" required><br>
+        <label>Bilanci i mbetur:</label>
+        <input type="number" name="bilanci" required><br>
+        <label>Vërtetuar dhe nënshkruar nga menaxheri i personelit:</label>
+        <input type="text" name="nenshkrimi_personelit" required><br>
+        <label>Data e nënshkrimit të menaxherit të personelit:</label>
+        <input type="date" name="data_personelit" min="{{ min_date }}" required><br>
+        <button type="submit">Dërgo</button>
+    </form>
+</body>
+</html>
+

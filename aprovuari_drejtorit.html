@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprovimi nga Drejtori Ekzekutiv</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Aprovimi nga Drejtori Ekzekutiv</h1>
+    <form method="post">
+        <input type="hidden" name="_id" value="{{ data['_id'] }}">
+        <p>Kërkesa për pushim vjetor nga: {{ data['emri'] }}</p>
+        <p>Ditët e pushimit: {{ data['dite_pushim'] }} nga data {{ data['data_fillimit'] }} deri më {{ data['data_mbarimit'] }}</p>
+        <label>Nënshkrimi i drejtorit ekzekutiv:</label>
+        <input type="text" name="nenshkrimi_drejtorit" required><br>
+        <label>Data e nënshkrimit të drejtorit ekzekutiv:</label>
+        <input type="date" name="data_nenshkrimit_drejtorit" min="{{ min_date }}" required><br>
+        <button type="submit">Dërgo</button>
+    </form>
+</body>
+</html>
+

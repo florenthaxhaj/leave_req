@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Created Successfully</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>PDF Created Successfully</h1>
+    <p>The PDF has been created and signed successfully.</p>
+    <a href="{{ url_for('static', filename=pdf_path) }}" download>Download Signed PDF</a>
+    <br><br>
+    <a href="{{ url_for('kerkese_pushimi') }}">Return to Home</a>
+</body>
+</html>
+

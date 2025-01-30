@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arsyet e Refuzimit</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Kërkesa për Pushim është Refuzuar</h1>
+    <div>
+        <p>Emri i punonjësit: {{ data['emri'] }}</p>
+        <p>Ditët e pushimit të kërkuara: {{ data['dite_pushim'] }}</p>
+        <p>Data e fillimit: {{ data['data_fillimit'] }}</p>
+        <p>Data e mbarimit: {{ data['data_mbarimit'] }}</p>
+    </div>
+    <div>
+        <h2>Arsyet e Refuzimit:</h2>
+        <p>{{ data['arsyet_refuzimit'] }}</p>
+    </div>
+    <a href="{{ url_for('kerkese_pushimi') }}">Kthehu në faqen kryesore</a>
+</body>
+</html>
+

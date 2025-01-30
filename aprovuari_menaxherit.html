@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprovimi nga Menaxheri</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Aprovimi nga Menaxheri</h1>
+    <form method="post">
+        <input type="hidden" name="_id" value="{{ data['_id'] }}">
+        <p>Kërkesa për pushim vjetor nga: {{ data['emri'] }}</p>
+        <p>Ditët e pushimit: {{ data['dite_pushim'] }} nga data {{ data['data_fillimit'] }} deri më {{ data['data_mbarimit'] }}</p>
+        <p>Aprovo: 
+            <label><input type="radio" name="aprovuari" value="True" required> Po</label>
+            <label><input type="radio" name="aprovuari" value="False" required> Jo</label>
+        </p>
+        <div id="arsyet_refuzimit_div" style="display: none;">
+            <label for="arsyet_refuzimit">Arsyet e refuzimit:</label>
+            <textarea id="arsyet_refuzimit" name="arsyet_refuzimit" rows="4" cols="50"></textarea>
+        </div>
+        <label>Nënshkrimi i menaxherit:</label>
+        <input type="text" name="nenshkrimi_menaxherit" required><br>
+        <label>Data e nënshkrimit të menaxherit:</label>
+        <input type="date" name="data_nenshkrimit_menaxherit" min="{{ min_date }}" required><br>
+        <button type="submit">Dërgo</button>
+    </form>
+
+    <script>
+        document.querySelectorAll('input[name="aprovuari"]').forEach((elem) => {
+            elem.addEventListener("change", function(event) {
+                var arsyetDiv = document.getElementById("arsyet_refuzimit_div");
+                arsyetDiv.style.display = event.target.value === "False" ? "block" : "none";
+            });
+        });
+    </script>
+</body>
+</html>
+

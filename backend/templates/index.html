@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leave Request System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Leave Request System</h1>
+        <p>Please use the API endpoints to interact with the system:</p>
+        <ul>
+            <li><code>/api/auth/login</code> - Login endpoint</li>
+            <li><code>/api/auth/register</code> - Registration endpoint</li>
+            <li><code>/api/pushimi/request</code> - Submit leave request</li>
+            <li><code>/api/pushimi/requests</code> - View leave requests</li>
+            <li><code>/api/admin/users</code> - Manage users (admin only)</li>
+        </ul>
+    </div>
+</body>
+</html>
+

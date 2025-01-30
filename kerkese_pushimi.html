@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kërkesë për Pushim Vjetor</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Kërkesë për Pushim Vjetor</h1>
+    <form method="post">
+        <label>Emri i punonjësit:</label>
+        <input type="text" name="emri" required><br>
+        <label>Nr i ID së punonjësit:</label>
+        <input type="number" name="id" required><br>
+        <label>Pozita:</label>
+        <input type="text" name="pozita" required><br>
+        <label>Departamenti:</label>
+        <input type="text" name="departamenti" required><br>
+        <label>Divizioni:</label>
+        <input type="text" name="divizioni" required><br>
+        <label>Ditët e pushimit:</label>
+        <input type="number" name="dite_pushim" required><br>
+        <label>Data e fillimit:</label>
+        <input type="date" name="data_fillimit" min="{{ min_date }}" required><br>
+        <label>Data e mbarimit:</label>
+        <input type="date" name="data_mbarimit" min="{{ min_date }}" required><br>
+        <label>Nënshkrimi i punonjësit:</label>
+        <input type="text" name="nenshkrimi_punonjesit" required><br>
+        <label>Data e nënshkrimit të punonjësit:</label>
+        <input type="date" name="data_nenshkrimit_punonjesit" min="{{ min_date }}" required><br>
+        <button type="submit">Dërgo</button>
+    </form>
+</body>
+</html>
+
