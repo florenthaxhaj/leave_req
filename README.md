@@ -1,6 +1,6 @@
 new terminal
->cd backend
->python app.py
+cd backend
+python app.py
 new terminal
->npm install
->npm run dev
+npm install
+npm run dev
